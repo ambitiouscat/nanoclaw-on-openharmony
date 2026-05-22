@@ -7,11 +7,11 @@
         "material": {
           "certpath": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BD9D10EAA1BB5742B1B421DFCAAA6B718C3DD2FC7679F1CCA79BC738277FA7A4C5DCD6BA47F70D4",
+          "keyPassword": "0000001B9DD120A87497AC04646787D73048F17953F9C21D82486C482AE303EB8AD9AA451BDF90F9491E17",
           "profile": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.p12",
-          "storePassword": "0000001B66E8EB6FBA36C1F60E6D833E925B7FABE96F52FC89979C218DEAE00158207F4A13E83A13B7F404"
+          "storePassword": "0000001B5B63B251F9F019B7BEC739D27C602F3533FAE2C6F62A755C8710AD1FD9C4C5284634679678E196"
         }
       }
     ],
@@ -41,20 +41,8 @@
   },
   "modules": [
     {
-      "name": "hap_editor",
-      "srcPath": "./hap_editor",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "hap_starter",
-      "srcPath": "./hap_starter",
+      "name": "entry",
+      "srcPath": "./entry",
       "targets": [
         {
           "name": "default",
