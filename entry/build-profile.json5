@@ -24,10 +24,24 @@
   ],
   "targets": [
     {
-      "name": "default"
+      "name": "default",
+      "runtimeOS": "HarmonyOS",
+      "config": {
+        "deviceType": [
+          "phone",
+          "2in1"
+        ]
+      }
     },
     {
       "name": "ohosTest",
+      "runtimeOS": "HarmonyOS",
+      "config": {
+        "deviceType": [
+          "phone",
+          "2in1"
+        ]
+      }
     }
   ]
 }
