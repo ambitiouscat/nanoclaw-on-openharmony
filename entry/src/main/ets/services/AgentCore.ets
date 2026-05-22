@@ -474,7 +474,7 @@ export class AgentCore {
           const uMsg: ApiMessage = { role: 'user', content: content }
           apiMessages.push(uMsg)
         } else {
-          const aMsg: ApiMessage = { role: 'assistant', content: msg.content }
+          const aMsg: ApiMessage = { role: 'assistant', content: msg.content, reasoningContent: msg.reasoningContent }
           apiMessages.push(aMsg)
         }
       }
@@ -503,6 +503,7 @@ export class AgentCore {
           const assistApiMsg: ApiMessage = {
             role: 'assistant',
             content: assistantMessage.content,
+            reasoningContent: assistantMessage.reasoningContent,
             toolCalls: assistantMessage.toolCalls
           }
           apiMessages.push(assistApiMsg)

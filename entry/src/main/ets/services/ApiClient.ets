@@ -16,6 +16,7 @@ interface ApiRequestBody {
 interface ApiRequestMessage {
   role: string
   content?: string | null
+  reasoning_content?: string
   tool_calls?: ApiRequestToolCall[]
   tool_call_id?: string
 }
@@ -58,6 +59,7 @@ interface ApiResponseChoice {
 interface ApiResponseMessage {
   role: string
   content: string | null
+  reasoning_content?: string
   tool_calls?: ApiResponseToolCall[]
 }
 
@@ -105,6 +107,7 @@ export class ApiClient {
     for (const m of messages) {
       const msg: ApiRequestMessage = { role: m.role }
       if (m.content !== undefined) msg.content = m.content
+      if (m.reasoningContent) msg.reasoning_content = m.reasoningContent
       if (m.toolCalls && m.toolCalls.length > 0) {
         const tcList: ApiRequestToolCall[] = []
         for (const tc of m.toolCalls) {
@@ -245,6 +248,7 @@ export class ApiClient {
     const apiMessage: ApiMessage = {
       role: message.role as ('system' | 'user' | 'assistant' | 'tool'),
       content: message.content,
+      reasoningContent: message.reasoning_content,
       toolCalls: toolCalls
     }
 

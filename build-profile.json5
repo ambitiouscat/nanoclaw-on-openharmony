@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\lmxxf\\.ohos\\config\\default_openclaw_on_openharmony_YSImOC2OH-EreMlYkCx0zedV1xsi5FtwLBc11wv2WwQ=.cer",
+          "certpath": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B4F7FDC1299AC7F5C1E079CA0FB12092603DFB8FFFEABEF48029CB56DA6049A247D967BC44ACE45",
-          "profile": "C:\\Users\\lmxxf\\.ohos\\config\\default_openclaw_on_openharmony_YSImOC2OH-EreMlYkCx0zedV1xsi5FtwLBc11wv2WwQ=.p7b",
+          "keyPassword": "0000001BD9D10EAA1BB5742B1B421DFCAAA6B718C3DD2FC7679F1CCA79BC738277FA7A4C5DCD6BA47F70D4",
+          "profile": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lmxxf\\.ohos\\config\\default_openclaw_on_openharmony_YSImOC2OH-EreMlYkCx0zedV1xsi5FtwLBc11wv2WwQ=.p12",
-          "storePassword": "0000001B483EC0A1FFCEDE81FCF833FA290F021362305DA581D7091DAF4536E6A937540F26D7528CB9214D"
+          "storeFile": "C:\\Users\\s\\.ohos\\config\\default_nanoclaw-on-openharmony_a5PjRvIczBxNEyZF1WE4CNeVYSkB9qMtsMFMG5i-VDs=.p12",
+          "storePassword": "0000001B66E8EB6FBA36C1F60E6D833E925B7FABE96F52FC89979C218DEAE00158207F4A13E83A13B7F404"
         }
       }
     ],
@@ -19,8 +19,8 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "targetSdkVersion": "6.0.1(21)",
-        "compatibleSdkVersion": "6.0.0(20)",
+        "targetSdkVersion": "5.0.5(17)",
+        "compatibleSdkVersion": "5.0.5(17)",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "strictMode": {
@@ -41,8 +41,20 @@
   },
   "modules": [
     {
-      "name": "entry",
-      "srcPath": "./entry",
+      "name": "hap_editor",
+      "srcPath": "./hap_editor",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hap_starter",
+      "srcPath": "./hap_starter",
       "targets": [
         {
           "name": "default",

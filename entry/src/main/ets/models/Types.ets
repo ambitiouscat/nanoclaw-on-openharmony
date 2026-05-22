@@ -9,6 +9,7 @@ export interface ChatMessage {
   sender: string
   senderName: string
   content: string
+  reasoningContent?: string
   timestamp: string
   isFromMe: boolean
   toolCalls?: ToolCallRecord[]
@@ -71,6 +72,7 @@ export interface ApiConfig {
 export interface ApiMessage {
   role: 'system' | 'user' | 'assistant' | 'tool'
   content?: string | null
+  reasoningContent?: string
   toolCalls?: ToolCall[]
   toolCallId?: string
 }
