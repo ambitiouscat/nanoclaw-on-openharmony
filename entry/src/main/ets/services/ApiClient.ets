@@ -156,6 +156,7 @@ export class ApiClient {
 
     while (retries <= maxRetries) {
       try {
+        Logger.info(`API request URL: ${url}`)
         Logger.info(`API request: model=${this.config.model}, messages=${messages.length}, tools=${tools?.length ?? 0}`)
 
         const response = await httpRequest.request(url, {
@@ -166,7 +167,8 @@ export class ApiClient {
           },
           extraData: JSON.stringify(body),
           connectTimeout: 30000,
-          readTimeout: 120000
+          readTimeout: 120000,
+          usingProtocol: http.HttpProtocol.HTTP1_1
         })
 
         const responseCode = response.responseCode
