@@ -168,7 +168,8 @@ export class ApiClient {
           extraData: JSON.stringify(body),
           connectTimeout: 30000,
           readTimeout: 120000,
-          usingProtocol: http.HttpProtocol.HTTP1_1
+          usingProtocol: http.HttpProtocol.HTTP1_1,
+          expectDataType: http.HttpDataType.STRING
         })
 
         const responseCode = response.responseCode
@@ -199,12 +200,18 @@ export class ApiClient {
 
         return this.parseResponse(result)
       } catch (e) {
+        const errMsg = (e as Error).message
+        // 4xx client errors are not retried
+        if (errMsg.startsWith('API error 4')) {
+          httpRequest.destroy()
+          throw e as Error
+        }
         if (retries >= maxRetries) {
           httpRequest.destroy()
           throw e as Error
         }
         retries++
-        Logger.warn(`API request failed, retrying (attempt ${retries}/${maxRetries}): ${(e as Error).message}`)
+        Logger.warn(`API request failed, retrying (attempt ${retries}/${maxRetries}): ${errMsg}`)
         const waitMs = Math.pow(2, retries) * 1000
         await new Promise<void>(resolve => setTimeout(resolve, waitMs))
       }
